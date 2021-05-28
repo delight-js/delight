@@ -1,6 +1,6 @@
 {
-  "name": "@fckdtl/themotion",
-  "version": "1.0.0",
+  "name": "@delight/react",
+  "version": "0.0.1",
   "description": "A theme framework based on emotion",
   "main": "index.js",
   "scripts": {
