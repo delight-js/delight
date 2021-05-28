@@ -1,0 +1,15 @@
+{
+  "name": "@fckdtl/themotion",
+  "version": "1.0.0",
+  "description": "A theme framework based on emotion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthias Dunker <matthias.dunker@fucking.digital>",
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5"
+  }
+}

@@ -2,13 +2,9 @@
 
 # Delight.js
 
-> Handle third party services in compliance with the GDPR
+> Sass syntax on steroids for emotion.js
 
-- Highly extendable
-- No bundle, ES6+ Modules
-- Open Source
-
-[GitHub](https://github.com/matthiasdunker/delight/)
+[GitHub](https://github.com/fuckingdigital/delight/)
 [Get Started](getting-started)
 
 ![color](#ffffff)
