@@ -5,7 +5,7 @@ import createCache from "@emotion/cache";
 import CssLayer from "./CssLayer";
 
 const myCache = createCache({
-  key: "css-utils",
+  key: "util", // css-utils
 });
 
 const CssBase = () => (

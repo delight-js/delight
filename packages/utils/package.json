@@ -1,0 +1,15 @@
+{
+  "name": "@delight-js/utils",
+  "version": "0.0.3",
+  "description": "A theme framework based on emotion",
+  "main": "dist/delight-js-utils.cjs.js",
+  "module": "dist/delight-js-utils.esm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthias Dunker <matthias.dunker@fucking.digital>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

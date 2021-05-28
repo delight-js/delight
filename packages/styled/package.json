@@ -1,9 +1,9 @@
 {
-  "name": "@delight-js/react",
+  "name": "@delight-js/styled",
   "version": "0.0.3",
   "description": "A theme framework based on emotion",
-  "main": "dist/delight-js-react.cjs.js",
-  "module": "dist/delight-js-react.esm.js",
+  "main": "dist/delight-js-styled.cjs.js",
+  "module": "dist/delight-js-styled.esm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,12 +12,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "@delight-js/utils": "^0.0.*"
-  },
   "peerDependencies": {
-    "react": "^17.0.1",
-    "@emotion/cache": "^11.1.5",
-    "@emotion/react": "^11.1.5"
+    "@emotion/styled": "^11.1.5"
   }
 }

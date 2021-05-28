@@ -1,6 +1,6 @@
 import { jsx as emotionJsx } from "@emotion/react";
-import { ThemeContext } from "./react";
-import { withTheme } from "./react";
+// import { ThemeContext } from "./react";
+// import { withTheme } from "./react";
 // const cssParse = require("css/lib/parse");
 
 // const getCSS = (props) => (theme) => {

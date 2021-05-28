@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "delight-monorepo",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "yarn build && yarn publish:packages",
+    "build": "preconstruct build"
+  },
+  "author": "Matthias Dunker <matthias.dunker@fucking.digital>",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*"
+    ],
+    "globals": {
+      "react": "React",
+      "react/jsx-runtime": "ReactJSX",
+      "react/jsx-dev-runtime": "ReactJSXDev"
+    }
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "@preconstruct/cli": "^2.1.0"
+  }
+}

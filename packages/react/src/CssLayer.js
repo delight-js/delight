@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react";
 import { Global, css, jsx, useTheme } from "./react";
-import { writeVars } from "../utils/cssVars";
+import { writeVars } from "@delight-js/utils";
 
 const CssLayer = ({ type }) => {
   const theme = useTheme();
@@ -19,7 +19,7 @@ const CssLayer = ({ type }) => {
             .map((v) =>
               Object.entries(v.vars)
                 .map((w) => writeVars(...w))
-                .join(""),
+                .join("")
             )
             .join("")}
           ${Object.entries(styles)
