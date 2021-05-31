@@ -1,11 +1,13 @@
 {
   "private": true,
   "name": "delight-monorepo",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "yarn build && yarn publish:packages",
-    "build": "preconstruct build"
+    "build": "preconstruct build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "yarn build && changeset publish"
   },
   "author": "Matthias Dunker <matthias.dunker@fucking.digital>",
   "workspaces": {
@@ -24,8 +26,12 @@
     }
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "@preconstruct/cli": "^2.1.0"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.16.0"
   }
 }
