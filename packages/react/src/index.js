@@ -1,16 +1,14 @@
-import ThemeProvider from "./ThemeProvider";
-import { css, jsx, withTheme, useTheme, Global, ClassNames } from "./react";
-import CssBase from "./CssBase";
-import CssUtils from "./CssUtils";
-
+export { css } from "./react";
+export { default as ThemeProvider } from "./ThemeProvider";
 export {
-  ThemeProvider,
-  css,
-  jsx,
-  withTheme,
   useTheme,
+  withTheme, // TODO: return not only theme, but css (with theme included), too
   Global,
   ClassNames,
-  CssBase,
-  CssUtils,
-};
+  jsx,
+  createElement,
+  keyframes,
+  withEmotionCache,
+  CacheProvider,
+  ThemeContext,
+} from "@emotion/react";

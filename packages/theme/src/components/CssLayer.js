@@ -1,10 +1,10 @@
-/** @jsx jsx */
-import React from "react";
-import { Global, jsx, useTheme } from "@emotion/react";
-import { css } from "./react";
-import { writeVars } from "@delight-js/utils";
+import * as React from "react";
+import { Global, useTheme } from "@emotion/react";
+import { css } from "../css.js";
+import { writeVars } from "../cssVars";
 
 const CssLayer = ({ type }) => {
+  // TODO: purgeCSS option (may be needed for utils)
   const theme = useTheme();
   // TODO: concat default vars
   const {
@@ -13,13 +13,13 @@ const CssLayer = ({ type }) => {
     },
   } = theme;
   return (
-    <>
+    <React.Fragment>
       <Global
         styles={css(`
           ${vars
-            .map((v) =>
+            .map(v =>
               Object.entries(v.vars)
-                .map((w) => writeVars(...w))
+                .map(w => writeVars(...w))
                 .join("")
             )
             .join("")}
@@ -28,7 +28,7 @@ const CssLayer = ({ type }) => {
             .join(" ")}
         `)(theme)}
       />
-    </>
+    </React.Fragment>
   );
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "@delight-js/react",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "A theme framework based on emotion",
   "main": "dist/delight-js-react.cjs.js",
   "module": "dist/delight-js-react.esm.js",
@@ -13,11 +13,18 @@
     "access": "public"
   },
   "dependencies": {
-    "@delight-js/utils": "^0.0.*"
+    "@delight-js/utils": "^0.0.4"
   },
   "peerDependencies": {
     "@emotion/cache": "^11.1.5",
     "@emotion/react": "^11.1.5",
     "react": "^17.0.1"
-  }
+  },
+  "entrypoints": [
+    "./index.js",
+    "./jsx-runtime.js",
+    "./jsx-dev-runtime.js",
+    "./isolated-hoist-non-react-statics-do-not-use-this-in-your-code.js"
+  ],
+  "umdName": "emotionReact"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@delight-js/styled",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A theme framework based on emotion",
   "main": "dist/delight-js-styled.cjs.js",
   "module": "dist/delight-js-styled.esm.js",

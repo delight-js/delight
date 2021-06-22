@@ -1,8 +1,14 @@
 import React from "react";
-import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
+import {
+  ThemeProvider as EmotionThemeProvider,
+  CacheProvider,
+} from "@emotion/react";
+import createCache from "@emotion/cache";
 import packageInfo from "@emotion/react/package.json";
+import CssBase from "./CssBase";
+import CssUtils from "./CssUtils";
 
-const isObject = (obj) => typeof obj === "object" && obj !== null;
+const isObject = obj => typeof obj === "object" && obj !== null;
 
 const walkObj = (obj, path = [], onEnd) => {
   if (isObject(obj)) {
@@ -17,7 +23,7 @@ const walkObj = (obj, path = [], onEnd) => {
   }
 };
 
-const createTheme = (theme) => {
+const createTheme = theme => {
   /*
    * 1. Read each domains config
    * 2. Process every domain
@@ -54,6 +60,15 @@ export const Context = React.createContext({
 
 export const useUmbrellaTheme = () => React.useContext(Context);
 
+const contentCache = createCache({
+  key: "c", // c = content
+  // stylisPlugins: [
+  //   customPlugin,
+  //   // has to be included manually when customizing `stylisPlugins` if you want to have vendor prefixes added automatically
+  //   prefixer
+  // ],
+});
+
 const ThemeProvider = ({ children, theme, ...props }) => {
   const outer = useUmbrellaTheme();
   if (process.env.NODE_ENV !== "production") {
@@ -65,10 +80,12 @@ const ThemeProvider = ({ children, theme, ...props }) => {
       );
     }
   }
-  // TODO: process theme with theme factory
+  // TODO: process theme with theme factory.
   return (
     <EmotionThemeProvider theme={createTheme(theme)} {...props}>
-      {children}
+      <CssBase />
+      <CacheProvider value={contentCache}>{children}</CacheProvider>
+      <CssUtils />
     </EmotionThemeProvider>
   );
 };

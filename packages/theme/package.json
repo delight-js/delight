@@ -1,9 +1,9 @@
 {
-  "name": "@delight-js/utils",
-  "version": "0.0.4",
+  "name": "@delight-js/theme",
+  "version": "0.0.2",
   "description": "A theme framework based on emotion",
-  "main": "dist/delight-js-utils.cjs.js",
-  "module": "dist/delight-js-utils.esm.js",
+  "main": "dist/delight-js-theme.cjs.js",
+  "module": "dist/delight-js-theme.esm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,10 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "@emotion/cache": "^11.1.5",
+    "@emotion/react": "^11.1.5",
+    "react": "^17.0.1"
   }
 }

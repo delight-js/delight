@@ -1,10 +1,13 @@
 {
   "private": true,
   "name": "delight-monorepo",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "preconstruct watch",
+    "dev": "preconstruct dev",
     "build": "preconstruct build",
+    "play:gatsby": "yarn workspace gatsbyjs-test develop",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "yarn build && changeset publish"
@@ -12,12 +15,13 @@
   "author": "Matthias Dunker <matthias.dunker@fucking.digital>",
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "playground/*"
     ]
   },
   "preconstruct": {
     "packages": [
-      "packages/*"
+      "packages/react"
     ],
     "globals": {
       "react": "React",

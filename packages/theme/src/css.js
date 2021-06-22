@@ -10,12 +10,6 @@ const getClassFromTheme = theme => (match, themeLink) => {
   return themeLink;
 };
 
-const joinTemplate = (strings, expressions) =>
-  strings.reduce(
-    (result, currentString, i) =>
-      `${result}${currentString}${expressions[i] ?? ""}`
-  );
-
 const isNumber = v => !Number.isNaN(v);
 
 const nextNumber = currentIndex => (v, index) =>
@@ -187,18 +181,7 @@ const parseCss = (style, theme) => {
 
 export { parseCss };
 
-const css = (arg1, ...otherArgs) => theme => {
-  // test if it is template tag
-  const isTag = !!(
-    Array.isArray(arg1) &&
-    arg1.length &&
-    !!arg1.raw &&
-    Array.isArray(arg1.raw) &&
-    arg1.raw.length === arg1.length &&
-    // Object.isFrozen(arg1) &&
-    otherArgs.length + 1 === arg1.length
-  );
-  const args = isTag ? [joinTemplate(arg1, otherArgs)] : [arg1, ...otherArgs];
+const css = (...args) => theme => {
   const newArgs = args.map(a => parseCss(a, theme));
   return emotionCss(...newArgs);
 };
