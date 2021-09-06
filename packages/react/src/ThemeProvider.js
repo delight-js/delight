@@ -60,16 +60,11 @@ export const Context = React.createContext({
 
 export const useUmbrellaTheme = () => React.useContext(Context);
 
-const contentCache = createCache({
-  key: "c", // c = content
-  // stylisPlugins: [
-  //   customPlugin,
-  //   // has to be included manually when customizing `stylisPlugins` if you want to have vendor prefixes added automatically
-  //   prefixer
-  // ],
-});
+const createContentCache = () => createCache({ key: "c" });
 
-const ThemeProvider = ({ children, theme, ...props }) => {
+const contentCache = createContentCache();
+
+const ThemeProvider = ({ children, theme, isSsr = true, cache, ...props }) => {
   const outer = useUmbrellaTheme();
   if (process.env.NODE_ENV !== "production") {
     if (outer.__EMOTION_VERSION__ !== __EMOTION_VERSION__) {
@@ -80,11 +75,12 @@ const ThemeProvider = ({ children, theme, ...props }) => {
       );
     }
   }
+  const cacheValue = cache || isSsr ? createContentCache() : contentCache;
   // TODO: process theme with theme factory.
   return (
     <EmotionThemeProvider theme={createTheme(theme)} {...props}>
       <CssBase />
-      <CacheProvider value={contentCache}>{children}</CacheProvider>
+      <CacheProvider value={cacheValue}>{children}</CacheProvider>
       <CssUtils />
     </EmotionThemeProvider>
   );

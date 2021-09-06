@@ -1,6 +1,6 @@
 {
   "name": "@delight-js/react",
-  "version": "0.0.5",
+  "version": "0.1.5",
   "description": "A theme framework based on emotion",
   "main": "dist/delight-js-react.cjs.js",
   "module": "dist/delight-js-react.esm.js",
