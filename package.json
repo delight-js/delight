@@ -8,6 +8,7 @@
     "dev": "preconstruct dev",
     "build": "preconstruct build",
     "play:gatsby": "yarn workspace gatsbyjs-test develop",
+    "play:gatsby:build": "yarn workspace gatsbyjs-test build",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "yarn build && changeset publish"
